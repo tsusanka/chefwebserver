@@ -1,0 +1,6 @@
+name             'apt'
+maintainer       'Tomas Susanka'
+maintainer_email 'susantom@fit.cvut.cz'
+license          'MIT'
+description      'Updates packages'
+version          '0.1.0'
