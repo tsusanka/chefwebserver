@@ -39,4 +39,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Simple bash script to check if Chef is installed
   config.vm.provision "shell", path: "bash/bootstrap.sh"
 
+  # After Chef is installed, let Chef do the magic
+  #
+  # default cookbook_path is ./cookbooks/ so no need to configure that
+  config.vm.provision :chef_solo do |chef|
+     chef.add_recipe "apache"
+  end
+
 end
