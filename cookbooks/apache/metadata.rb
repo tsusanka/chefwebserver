@@ -1,4 +1,4 @@
-pname             'apache'
+name            'apache'
 maintainer       'Tomas Susanka'
 maintainer_email 'susantom@fit.cvut.cz'
 license          'MIT'
