@@ -1,0 +1,6 @@
+name             'php5'
+maintainer       'Tomas Susanka'
+maintainer_email 'susantom@fit.cvut.cz'
+license          'MIT'
+description      'Installs/Configures PHP5'
+version          '0.1.0'

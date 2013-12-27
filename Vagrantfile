@@ -43,7 +43,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   # default cookbook_path is ./cookbooks/ so no need to configure that
   config.vm.provision :chef_solo do |chef|
+     chef.add_recipe "apt"
      chef.add_recipe "apache"
+     chef.add_recipe "php5"
   end
 
 end
