@@ -46,6 +46,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      chef.add_recipe "apt"
      chef.add_recipe "apache"
      chef.add_recipe "php5"
+     chef.add_recipe "mysql"
   end
 
 end
