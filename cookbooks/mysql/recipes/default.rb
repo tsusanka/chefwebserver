@@ -25,21 +25,3 @@ end
 template "/etc/mysql/my.cnf" do
 	notifies :reload, "service[mysql]"
 end
-
-# install adminer
-# create directory
-directory "/var/www/adminer" do
-	action :create
-end
-
-# download adminer
-remote_file "adminer" do
-	path "/var/www/adminer/index.php"
-	source node['adminer']['url'] # accessing attribute
-end
-
-# download skin
-remote_file "adminer-skin" do
-	path "/var/www/adminer/adminer.css"
-	source node['adminer']['skin-url']
-end
