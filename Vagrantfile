@@ -34,7 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "/home/tomas/Prace/", "/var/www"
+  config.vm.synced_folder "/home/tomas/Prace/", "/var/www", :mount_options => ['dmode=777','fmode=777']
 
   # Simple bash script to check if Chef is installed
   config.vm.provision "shell", path: "bash/bootstrap.sh"
