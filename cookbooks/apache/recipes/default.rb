@@ -13,3 +13,14 @@ end
 service "apache2" do
 	action [:start, :enable] # array of parameters; enable says to start at boot
 end
+
+# enable mod rewrite
+execute "modrewrite" do
+	command "sudo a2enmod rewrite"
+	notifies :restart, "service[apache2]"
+end
+
+# edit the default site settings
+template "/etc/apache2/sites-available/000-default.conf" do
+	notifies :restart, "service[apache2]"
+end
