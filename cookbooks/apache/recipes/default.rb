@@ -24,9 +24,3 @@ end
 template "/etc/apache2/sites-available/000-default.conf" do
 	notifies :restart, "service[apache2]"
 end
-
-# install json extension, which has been removed in some extensions due to license conflict
-execute "php5-json" do
-	command "sudo apt-get install php5-json"
-	notifies :restart, "service[apache2]"
-end
