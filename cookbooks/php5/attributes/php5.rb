@@ -18,3 +18,5 @@ default['php']['short_open_tag'] = 'Off'
 default['php']['track_errors'] = 'On'
 default['php']['url_rewriter']['tags'] = '"a=href,area=href,frame=src,input=src,form=fakeentry"'
 default['php']['variables_order'] = '"GPCS"'
+
+default['php']['mysqlextension'] = 'mysqli.so'
