@@ -13,3 +13,8 @@ end
 template "/etc/php5/apache2/php.ini" do
 	notifies :reload, "service[apache2]"
 end
+
+# php addons
+package "php-pear" do
+	action :install
+end
