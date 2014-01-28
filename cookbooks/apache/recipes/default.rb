@@ -21,6 +21,6 @@ execute "modrewrite" do
 end
 
 # edit the default site settings
-template "/etc/apache2/sites-available/000-default.conf" do
+template "/etc/apache2/sites-available/default" do
 	notifies :restart, "service[apache2]"
 end

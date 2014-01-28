@@ -21,12 +21,6 @@ package "php-pear" do
 	action :install
 end
 
-# json extension, which has been removed in some extensions due to license conflict
-package "php5-json" do
-	action :install
-	notifies :restart, "service[apache2]"
-end
-
 # curl
 package "php5-curl" do
 	action :install
