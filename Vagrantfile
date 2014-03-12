@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network :private_network, ip: "192.168.33.10"
+  config.vm.network :private_network, ip: "10.11.12.13"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -34,7 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "/home/tomas/Prace/", "/var/www", :mount_options => ['dmode=777','fmode=777']
+  config.vm.synced_folder "/home/tomas/Prace/", "/var/www", :nfs => true
 
   # Simple bash script to check if Chef is installed
   config.vm.provision "shell", path: "bash/bootstrap.sh"
@@ -47,6 +47,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      chef.add_recipe "apache"
      chef.add_recipe "php5"
      chef.add_recipe "mysql"
+  end
+
+  config.vm.provider "virtualbox" do |v|
+     v.memory = 1024
   end
 
 end
