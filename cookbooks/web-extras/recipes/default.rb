@@ -10,11 +10,3 @@ remote_file "#{node['composer']['dir']}/composer" do
 	mode 775
     action :create
 end
-
-#
-# phpunit
-#
-remote_file "#{node['phpunit']['dir']}/phpunit" do
-    source node['phpunit']['url']
-    mode 775
-end
