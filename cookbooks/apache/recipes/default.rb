@@ -17,11 +17,14 @@ end
 
 # enable mod rewrite
 execute "modrewrite" do
+	action :run
 	command "sudo a2enmod rewrite"
 	notifies :restart, "service[apache2]"
 end
 
 # edit the default site settings
 template "/etc/apache2/sites-available/default" do
+	action :create
+	source "default.erb"
 	notifies :restart, "service[apache2]"
 end
