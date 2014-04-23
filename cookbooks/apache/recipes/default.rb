@@ -5,6 +5,7 @@
 
 # install apache
 package "apache2" do
+	package_name "apache2"
 	action :install
 end
 
